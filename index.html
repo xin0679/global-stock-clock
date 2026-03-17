@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="股市时钟">
+    <meta name="theme-color" content="#121829">
+    <meta name="description" content="实时追踪全球主要股市交易时间">
+    <title>全球股市时钟</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <!-- iPhone 图标 -->
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="icon-192x192.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 全球股市时钟</h1>
+            <p class="subtitle">实时追踪全球主要股市交易时间</p>
+        </header>
+
+        <main class="clocks-grid">
+            <!-- 北京时间 -->
+            <div class="clock-card" data-timezone="Asia/Shanghai">
+                <div class="clock-header">
+                    <span class="flag">🇨🇳</span>
+                    <div class="market-info">
+                        <h2>北京时间</h2>
+                        <span class="market-name">A股/港股</span>
+                    </div>
+                </div>
+                <div class="analog-clock">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="clock-face" cx="50" cy="50" r="45"/>
+                        <g class="hour-marks"></g>
+                        <line class="hour-hand" x1="50" y1="50" x2="50" y2="25"/>
+                        <line class="minute-hand" x1="50" y1="50" x2="50" y2="15"/>
+                        <line class="second-hand" x1="50" y1="50" x2="50" y2="10"/>
+                        <circle class="center-dot" cx="50" cy="50" r="3"/>
+                    </svg>
+                </div>
+                <div class="digital-time">
+                    <span class="time">--:--:--</span>
+                    <span class="date">----/--/--</span>
+                </div>
+                <div class="market-status">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">--</span>
+                </div>
+                <div class="trading-hours">
+                    <span>交易时段: 09:30 - 15:00</span>
+                </div>
+            </div>
+
+            <!-- 香港时间 -->
+            <div class="clock-card" data-timezone="Asia/Hong_Kong">
+                <div class="clock-header">
+                    <span class="flag">🇭🇰</span>
+                    <div class="market-info">
+                        <h2>香港时间</h2>
+                        <span class="market-name">港股</span>
+                    </div>
+                </div>
+                <div class="analog-clock">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="clock-face" cx="50" cy="50" r="45"/>
+                        <g class="hour-marks"></g>
+                        <line class="hour-hand" x1="50" y1="50" x2="50" y2="25"/>
+                        <line class="minute-hand" x1="50" y1="50" x2="50" y2="15"/>
+                        <line class="second-hand" x1="50" y1="50" x2="50" y2="10"/>
+                        <circle class="center-dot" cx="50" cy="50" r="3"/>
+                    </svg>
+                </div>
+                <div class="digital-time">
+                    <span class="time">--:--:--</span>
+                    <span class="date">----/--/--</span>
+                </div>
+                <div class="market-status">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">--</span>
+                </div>
+                <div class="trading-hours">
+                    <span>交易时段: 09:30 - 16:00</span>
+                </div>
+            </div>
+
+            <!-- 纽约时间 -->
+            <div class="clock-card" data-timezone="America/New_York">
+                <div class="clock-header">
+                    <span class="flag">🇺🇸</span>
+                    <div class="market-info">
+                        <h2>纽约时间</h2>
+                        <span class="market-name">美股</span>
+                    </div>
+                </div>
+                <div class="analog-clock">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="clock-face" cx="50" cy="50" r="45"/>
+                        <g class="hour-marks"></g>
+                        <line class="hour-hand" x1="50" y1="50" x2="50" y2="25"/>
+                        <line class="minute-hand" x1="50" y1="50" x2="50" y2="15"/>
+                        <line class="second-hand" x1="50" y1="50" x2="50" y2="10"/>
+                        <circle class="center-dot" cx="50" cy="50" r="3"/>
+                    </svg>
+                </div>
+                <div class="digital-time">
+                    <span class="time">--:--:--</span>
+                    <span class="date">----/--/--</span>
+                </div>
+                <div class="market-status">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">--</span>
+                </div>
+                <div class="trading-hours">
+                    <span>交易时段: 09:30 - 16:00 (美东)</span>
+                </div>
+            </div>
+
+            <!-- 伦敦时间 -->
+            <div class="clock-card" data-timezone="Europe/London">
+                <div class="clock-header">
+                    <span class="flag">🇬🇧</span>
+                    <div class="market-info">
+                        <h2>伦敦时间</h2>
+                        <span class="market-name">英股</span>
+                    </div>
+                </div>
+                <div class="analog-clock">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="clock-face" cx="50" cy="50" r="45"/>
+                        <g class="hour-marks"></g>
+                        <line class="hour-hand" x1="50" y1="50" x2="50" y2="25"/>
+                        <line class="minute-hand" x1="50" y1="50" x2="50" y2="15"/>
+                        <line class="second-hand" x1="50" y1="50" x2="50" y2="10"/>
+                        <circle class="center-dot" cx="50" cy="50" r="3"/>
+                    </svg>
+                </div>
+                <div class="digital-time">
+                    <span class="time">--:--:--</span>
+                    <span class="date">----/--/--</span>
+                </div>
+                <div class="market-status">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">--</span>
+                </div>
+                <div class="trading-hours">
+                    <span>交易时段: 08:00 - 16:30</span>
+                </div>
+            </div>
+
+            <!-- 东京时间 -->
+            <div class="clock-card" data-timezone="Asia/Tokyo">
+                <div class="clock-header">
+                    <span class="flag">🇯🇵</span>
+                    <div class="market-info">
+                        <h2>东京时间</h2>
+                        <span class="market-name">日股</span>
+                    </div>
+                </div>
+                <div class="analog-clock">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="clock-face" cx="50" cy="50" r="45"/>
+                        <g class="hour-marks"></g>
+                        <line class="hour-hand" x1="50" y1="50" x2="50" y2="25"/>
+                        <line class="minute-hand" x1="50" y1="50" x2="50" y2="15"/>
+                        <line class="second-hand" x1="50" y1="50" x2="50" y2="10"/>
+                        <circle class="center-dot" cx="50" cy="50" r="3"/>
+                    </svg>
+                </div>
+                <div class="digital-time">
+                    <span class="time">--:--:--</span>
+                    <span class="date">----/--/--</span>
+                </div>
+                <div class="market-status">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">--</span>
+                </div>
+                <div class="trading-hours">
+                    <span>交易时段: 09:00 - 15:00</span>
+                </div>
+            </div>
+
+            <!-- 悉尼时间 -->
+            <div class="clock-card" data-timezone="Australia/Sydney">
+                <div class="clock-header">
+                    <span class="flag">🇦🇺</span>
+                    <div class="market-info">
+                        <h2>悉尼时间</h2>
+                        <span class="market-name">澳股</span>
+                    </div>
+                </div>
+                <div class="analog-clock">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="clock-face" cx="50" cy="50" r="45"/>
+                        <g class="hour-marks"></g>
+                        <line class="hour-hand" x1="50" y1="50" x2="50" y2="25"/>
+                        <line class="minute-hand" x1="50" y1="50" x2="50" y2="15"/>
+                        <line class="second-hand" x1="50" y1="50" x2="50" y2="10"/>
+                        <circle class="center-dot" cx="50" cy="50" r="3"/>
+                    </svg>
+                </div>
+                <div class="digital-time">
+                    <span class="time">--:--:--</span>
+                    <span class="date">----/--/--</span>
+                </div>
+                <div class="market-status">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">--</span>
+                </div>
+                <div class="trading-hours">
+                    <span>交易时段: 10:00 - 16:00</span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="status-dot open"></span>
+                    <span>交易中</span>
+                </div>
+                <div class="legend-item">
+                    <span class="status-dot closed"></span>
+                    <span>休市</span>
+                </div>
+                <div class="legend-item">
+                    <span class="status-dot pre"></span>
+                    <span>盘前/盘后</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 注册 Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((registration) => {
+                        console.log('SW registered:', registration);
+                    })
+                    .catch((error) => {
+                        console.log('SW registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
