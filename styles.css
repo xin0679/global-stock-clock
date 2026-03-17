@@ -324,31 +324,37 @@ footer {
 /* 响应式设计 - 手机端紧凑布局 */
 @media (max-width: 768px) {
     .container {
-        padding: 10px 8px;
-        padding-top: calc(50px + env(safe-area-inset-top, 0px));
+        padding: 6px 4px;
+        padding-top: calc(12px + env(safe-area-inset-top, 0px));
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
     header {
-        margin-bottom: 8px;
+        margin-bottom: 4px;
     }
 
     header h1 {
-        font-size: 1.3rem;
+        font-size: 1rem;
+        margin-bottom: 2px;
     }
 
     .subtitle {
-        font-size: 0.75rem;
+        font-size: 0.6rem;
+        display: none;
     }
 
     .clocks-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        margin-bottom: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 4px;
+        margin-bottom: 4px;
+        flex: 1;
     }
 
     .clock-card {
-        padding: 10px;
-        border-radius: 12px;
+        padding: 6px 4px;
+        border-radius: 8px;
     }
 
     .clock-card:hover {
@@ -356,80 +362,81 @@ footer {
     }
 
     .clock-header {
-        gap: 6px;
-        margin-bottom: 6px;
+        gap: 3px;
+        margin-bottom: 2px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .flag {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 
     .market-info h2 {
-        font-size: 0.85rem;
+        font-size: 0.65rem;
+        margin-bottom: 0;
+        text-align: center;
     }
 
     .market-name {
-        font-size: 0.65rem;
+        font-size: 0.5rem;
+        display: none;
     }
 
     .analog-clock {
-        width: 60px;
-        height: 60px;
-        margin: 0 auto 6px;
+        width: 36px;
+        height: 36px;
+        margin: 0 auto 2px;
     }
 
     .digital-time {
-        margin-bottom: 4px;
+        margin-bottom: 2px;
     }
 
     .digital-time .time {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         letter-spacing: 0;
     }
 
     .digital-time .date {
-        font-size: 0.6rem;
-        margin-top: 1px;
+        display: none;
     }
 
     .market-status {
-        gap: 4px;
-        margin-bottom: 4px;
+        gap: 2px;
+        margin-bottom: 2px;
     }
 
     .status-indicator {
-        width: 6px;
-        height: 6px;
+        width: 5px;
+        height: 5px;
     }
 
     .status-text {
-        font-size: 0.7rem;
-    }
-
-    .trading-hours {
-        padding-top: 4px;
-    }
-
-    .trading-hours span {
         font-size: 0.55rem;
     }
 
+    .trading-hours {
+        display: none;
+    }
+
     footer {
-        margin-top: 8px;
+        margin-top: 4px;
+        padding-bottom: env(safe-area-inset-bottom, 0px);
     }
 
     .legend {
-        gap: 15px;
+        gap: 12px;
     }
 
     .legend-item {
-        font-size: 0.7rem;
-        gap: 4px;
+        font-size: 0.6rem;
+        gap: 3px;
     }
 
     .status-dot {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
     }
 }
 
